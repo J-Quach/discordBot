@@ -1,5 +1,6 @@
 import discord
 import os
+from decouple import config
 
 client = discord.Client()
 
@@ -12,7 +13,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if '$hello' in message.content:
-        await message.channel.send('Hello!')
+    if 'gather' in message.content:
+        await message.channel.send('https://gather.town/app/Uu7dRIJ7BdzD44NS/party')
 
-client.run(os.getenv('DISCORD_TOKEN'))
+discordBotKey = config('TOKEN')
+client.run(discordBotKey)
