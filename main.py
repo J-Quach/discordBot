@@ -1,6 +1,7 @@
 import discord
 import os
 from decouple import config
+from web_bot import web_bot
 
 client = discord.Client()
 
@@ -36,4 +37,5 @@ async def on_message(message):
 
 
 discordBotKey = config('TOKEN')
+web_bot()
 client.run(discordBotKey)
