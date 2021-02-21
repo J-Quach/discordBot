@@ -12,9 +12,28 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    
+    if message.content == '!gatherhelp':
+        await message.channel.send('Here are the list of commands available:\n'
+        '!gather: gather link to join\n'
+        '!cena: AND HIS NAME IS JOHN CENA\n'
+        '!horn: Horn noises\n'
+        '!damedame: DAMEDAMEYO\n')
 
-    if 'gather' in message.content:
+
+    if message.content == '!gather':
         await message.channel.send('https://gather.town/app/Uu7dRIJ7BdzD44NS/party')
+
+    if message.content == '!cena':
+        return
+
+    if message.content == '!horn':
+        return
+
+    if message.content == '!damedame':
+        return
+
+
 
 discordBotKey = config('TOKEN')
 client.run(discordBotKey)
